@@ -29,7 +29,7 @@ class Api::V1::TransactionsController < ApplicationController
     btc_price = fetch_btc_price
     amount_received = (amount_sent.to_f / btc_price).round(8)
 
-    if wallet.amount.to_f >= amount_sent
+    if wallet.amount.to_f >= amount_sent.to_f
       transaction = Transaction.create!(
         user_id: @user.id,
         currency_sent: currency_sent,
@@ -39,7 +39,8 @@ class Api::V1::TransactionsController < ApplicationController
       )
 
       if transaction.save
-        wallet.update(amount: wallet.amount - amount_sent)
+        total = (wallet.amount - amount_sent.to_i)
+        wallet.update(amount: total)
         wallet_currency_received.update(amount: wallet_currency_received.amount + amount_received)
         render json: { message: 'Transacción realizada correctamente', transaction: transaction }, status: :created
       else
