@@ -9,7 +9,6 @@ gem "bootsnap", require: false
 gem 'httparty'
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem 'devise', '~> 4.9', '>= 4.9.3'
-gem 'rspec', '~> 3.13'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -20,6 +19,10 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+end
+
+group :test do
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.1'
 end
 
 group :development do
