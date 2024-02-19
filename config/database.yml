@@ -15,3 +15,7 @@ default: &default
 development:
   <<: *default
   database: vitawallet_development
+
+test:
+  <<: *default
+  database: vitawallet_test
