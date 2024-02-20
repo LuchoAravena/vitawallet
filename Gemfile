@@ -19,11 +19,13 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  gem 'rswag'
 end
 
 group :test do
   gem 'rspec-rails', '~> 6.1', '>= 6.1.1'
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+  gem 'webmock', '~> 3.21', '>= 3.21.2'
 end
 
 group :development do
