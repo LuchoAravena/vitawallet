@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'swagger_helper'
 
 RSpec.describe 'Transactions API', type: :request do
   describe 'POST /api/v1/transactions' do
@@ -13,7 +14,7 @@ RSpec.describe 'Transactions API', type: :request do
         currency_received: 'BTC',
         amount_sent: 500
       }
-
+      
       post '/api/v1/transactions', params: transaction_params
 
       expected_response = 'Transacción realizada correctamente'

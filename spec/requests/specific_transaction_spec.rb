@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'swagger_helper'
 
 RSpec.describe 'Specific Transactions', type: :request do
   describe "GET /api/v1/transactions/:id" do
@@ -14,7 +15,7 @@ RSpec.describe 'Specific Transactions', type: :request do
     end
 
     it "returns an error when the ID does not exist" do
-      get "/api/v1/transactions/9999" # Use an ID that does not exist
+      get "/api/v1/transactions/9999"
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
