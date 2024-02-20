@@ -10,16 +10,13 @@ gem 'httparty'
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem "rack-cors"
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
+gem 'rswag'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
-  gem 'rswag'
 end
 
 group :test do
@@ -33,3 +30,5 @@ group :development do
   # gem "spring"
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
